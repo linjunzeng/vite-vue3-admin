@@ -48,14 +48,13 @@ service.interceptors.response.use(
     }
 )
 
-export function request({url, method, params = {}, data = {}, option = {}}){
+export function request({url, method, params = {}, data = {}}: any){
     return new Promise((resolve, reject) => {
         service({
             url, 
             method,
             params,
-            data,
-            option
+            data
         })
         .then(response => {
             resolve(response)
@@ -69,32 +68,30 @@ export function request({url, method, params = {}, data = {}, option = {}}){
 
 /**
  * 封装 get 方法
- * @param url
- * @param data
+ * @param String url
+ * @param Object params
  * @returns {Promise}
  */
 
- export function fetch(url, params = {}, option = {}){
+ export function fetch(url = '', params = {}){
     return request({
         url,
         method: 'get',
-        params,
-        option
+        params
     })
 }
 
 /**
  * 封装 post 方法
- * @param url
- * @param data
+ * @param String url
+ * @param Object data
  * @returns {Promise}
  */
 
-export function post(url, data = {}, option = {}){
+export function post(url = '', data = {}){
     return request({
         url,
         method: 'post',
-        data,
-        option
+        data
     })
 }

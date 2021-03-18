@@ -1,17 +1,24 @@
 <template>
   <div>
-    <el-button type="primary">el-button</el-button>
+    <div>{{$store.state.aa}}</div>
+    <el-button type="primary" @click="change">el-button</el-button>
   </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { getList } from '@/api'
-
+import { getList } from '../api'
 export default defineComponent({
   setup(){
-    getList({
+    /* getList({
       aa: 123
-    })
+    }) */
+  },
+  methods: {
+    change(){
+      this.$store.dispatch('changeBB', '456')
+      console.log(1);
+      // this.$store.commit('changeAA', '456')
+    }
   }
 })
 </script>
