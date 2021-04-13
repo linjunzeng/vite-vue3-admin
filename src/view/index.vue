@@ -1,6 +1,7 @@
 <template>
   <div>
     <div>{{$store.state.aa}}</div>
+    <input type="text" placeholder="">
     <el-button type="primary" @click="change">el-button</el-button>
   </div>
 </template>
