@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div>{{$store.state.aa}}</div>
-    <input type="text" placeholder="">
-    <el-button type="primary" @click="change">el-button</el-button>
+    Index
   </div>
 </template>
 <script lang="ts">
@@ -15,11 +13,6 @@ export default defineComponent({
     }) */
   },
   methods: {
-    change(){
-      this.$store.dispatch('changeBB', '456')
-      console.log(1);
-      // this.$store.commit('changeAA', '456')
-    }
   }
 })
 </script>
